@@ -3,3 +3,8 @@ class Item:
         self.name = name
         self.description = description
         self.is_done = is_done
+
+
+class ItemList:
+    def __init__(self):
+        self.item_list = []
