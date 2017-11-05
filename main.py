@@ -1,9 +1,32 @@
+import display
+from data import *
+
+
+def add_new_item():
+    while True:
+        display.show_message('name your item: ')
+        name = input()
+        if len(name) <= 15:
+            break
+        display.show_message('Name can be only 20 characters long!')
+    while True:
+        display.show_message('Type in item description: ')
+        description = input()
+        if len(description) <= 150:
+            break
+        display.show_message('Description can be max. 150 characters long!')
+    new_item = Item(name, description)
+    return new_item
+
+
 def main():
+    item_list = ItemList()
     menu_options = ['Exit', 'Add new item', 'Delete item', "Modify item's description", "Modify item's name",
                     'Mark item as done', 'Show items', 'Show specific item']
-    
+
     if option == '1':
-        pass
+        new_item = add_new_item()
+        item_list.add_item(new_item)
 
     elif option == '2':
         pass
