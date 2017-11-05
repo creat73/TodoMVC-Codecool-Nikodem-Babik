@@ -68,6 +68,7 @@ def main():
                     'Mark item as done', 'Show items', 'Show specific item']
     while True:
         index_range = len(item_list)
+        display.show_menu_options(menu_options)
         option = input()
 
         if option == '1':
