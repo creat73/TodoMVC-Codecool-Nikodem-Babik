@@ -92,10 +92,11 @@ def main():
             item_list[item_index].mark_as_done()
 
         elif option == '6':
-            pass
+            display.show_item_list(str(item_list))
 
         elif option == '7':
-            pass
+            item_index = get_index_input(index_range)
+            display.show_message(str(item_list[item_index]))
 
         elif option == '0':
             exit()

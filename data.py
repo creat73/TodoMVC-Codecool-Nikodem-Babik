@@ -13,6 +13,9 @@ class Item:
     def mark_as_done(self):
         self.is_done = True
 
+    def __str__(self):
+        return self.name + "\n" + self.description + "\n"
+
 
 class ItemList:
     def __init__(self):
@@ -29,3 +32,9 @@ class ItemList:
 
     def delete_item(self, index):
         self.item_list.pop(index)
+
+    def __str__(self):
+        string = ""
+        for item in self.item_list:
+            string += str(self.item_list.index(item)) + "\n" + item.name + "\n\n"
+        return string
