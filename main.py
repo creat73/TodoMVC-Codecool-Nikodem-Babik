@@ -6,7 +6,7 @@ def add_new_item():
     while True:
         display.show_message('name your item: ')
         name = input()
-        if len(name) <= 15:
+        if len(name) <= 20:
             break
         display.show_message('Name can be only 20 characters long!')
     while True:
