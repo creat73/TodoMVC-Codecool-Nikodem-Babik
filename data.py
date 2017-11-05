@@ -18,5 +18,11 @@ class ItemList:
     def __init__(self):
         self.item_list = []
 
+    def __getitem__(self, index):
+        return self.item_list[index]
+
+    def __len__(self):
+        return len(self.item_list)
+
     def add_item(self, item):
         self.item_list.append(item)

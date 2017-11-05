@@ -18,13 +18,33 @@ def add_new_item():
     new_item = Item(name, description)
     return new_item
 
+def get_index_input(index_range):
+    MIN_INDEX = 0
+    INDEX_TO_LEN_DIFFER = 1
+
+    while True:
+        try:
+            index = int(input())
+            if index > index_range - INDEX_TO_LEN_DIFFER or index < MIN_INDEX:
+                display.show_message('Index out of range!')
+                continue
+            break
+
+        except ValueError:
+            display.show_message('Wrong index!')
+            continue
+
+    return index
+
 
 def main():
     item_list = ItemList()
     menu_options = ['Exit', 'Add new item', 'Delete item', "Modify item's description", "Modify item's name",
                     'Mark item as done', 'Show items', 'Show specific item']
     while True:
+        index_range = len(item_list)
         option = input()
+
         if option == '1':
             new_item = add_new_item()
             item_list.add_item(new_item)
@@ -40,7 +60,7 @@ def main():
 
         elif option == '5':
             display.show_message('Type in index of item you want to mark as done: ')
-            item_index = input()
+            item_index = get_index_input(index_range)
             item_list[item_index].mark_as_done()
 
         elif option == '6':
