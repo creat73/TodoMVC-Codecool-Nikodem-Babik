@@ -63,13 +63,22 @@ def get_index_input(index_range):
 
 
 def main():
+    EMPTY_LIST_LENGTH = 0
+
     item_list = ItemList()
     menu_options = ['Exit', 'Add new item', 'Delete item', "Modify item's description", "Modify item's name",
                     'Mark item as done', 'Show items', 'Show specific item']
+    edition_options_indexes = ['2', '3', '4', '5']
+
     while True:
         index_range = len(item_list)
         display.show_menu_options(menu_options)
         option = input()
+
+        if index_range == EMPTY_LIST_LENGTH:
+            if option in edition_options_indexes:
+                display.show_message("No items to edit/delete!")
+                continue
 
         if option == '1':
             new_item = add_new_item()
@@ -95,6 +104,10 @@ def main():
             display.show_item_list(str(item_list))
 
         elif option == '7':
+            if index_range == EMPTY_LIST_LENGTH:
+                display.show_message('No items to show,')
+                continue
+
             item_index = get_index_input(index_range)
             display.show_message(str(item_list[item_index]))
 
