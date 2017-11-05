@@ -18,6 +18,31 @@ def add_new_item():
     new_item = Item(name, description)
     return new_item
 
+
+def edit_item(item_list, edit_value, index_range):
+    display.show_message('Type in index of item you want to edit: ')
+    item_index = get_index_input(index_range)
+
+    if edit_value == 'description':
+        is_title = False
+        max_value_length = 150
+
+    else:
+        is_title = True
+        max_value_length = 20
+
+    while True:
+        display.show_message('Type in new ' + edit_value )
+        new_value = input()
+
+        if len(new_value) <= max_value_length:
+            break
+        else:
+            display.show_message(edit_value + ' too long! Max length: ' + str(max_value_length))
+
+    item_list[item_index].modify_item(new_value, is_title)
+
+
 def get_index_input(index_range):
     MIN_INDEX = 0
     INDEX_TO_LEN_DIFFER = 1
@@ -53,10 +78,10 @@ def main():
             pass
 
         elif option == '3':
-            pass
+            edit_item(item_list, 'description', index_range)
 
         elif option == '4':
-            pass
+            edit_item(item_list, 'title', index_range)
 
         elif option == '5':
             display.show_message('Type in index of item you want to mark as done: ')
