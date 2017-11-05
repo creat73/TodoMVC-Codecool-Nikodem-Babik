@@ -26,3 +26,6 @@ class ItemList:
 
     def add_item(self, item):
         self.item_list.append(item)
+
+    def delete_item(self, index):
+        self.item_list.pop(index)

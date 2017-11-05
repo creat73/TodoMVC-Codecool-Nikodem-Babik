@@ -75,7 +75,9 @@ def main():
             item_list.add_item(new_item)
 
         elif option == '2':
-            pass
+            display.show_message('Type in index of item you want to delete: ')
+            item_index = get_index_input(index_range)
+            item_list.delete_item(item_index)
 
         elif option == '3':
             edit_item(item_list, 'description', index_range)
@@ -95,7 +97,7 @@ def main():
             pass
 
         elif option == '0':
-            pass
+            exit()
 
         else:
             pass
