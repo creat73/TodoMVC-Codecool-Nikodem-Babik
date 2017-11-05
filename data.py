@@ -14,7 +14,12 @@ class Item:
         self.is_done = True
 
     def __str__(self):
-        return self.name + "\n" + self.description + "\n"
+        if self.is_done:
+            done_info = 'Done'
+        else:
+            done_info = 'Not done'
+
+        return self.name + "\n" + self.description + "\n" + done_info + "\n"
 
 
 class ItemList:
@@ -36,5 +41,5 @@ class ItemList:
     def __str__(self):
         string = ""
         for item in self.item_list:
-            string += str(self.item_list.index(item)) + "\n" + item.name + "\n\n"
+            string += "Item id: " + str(self.item_list.index(item)) + "\n" + item.name + "\n\n"
         return string

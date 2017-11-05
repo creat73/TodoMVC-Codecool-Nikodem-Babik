@@ -13,5 +13,9 @@ def show_item_list(items):
     print(items)
 
 
+def show_specific_item(item_id, item_string):
+    print(str(item_id) + '\n' + item_string)
+
+
 def show_exit_message():
     print('Thanks for using the program!')
