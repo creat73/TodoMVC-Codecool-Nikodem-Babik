@@ -99,6 +99,7 @@ def main():
             display.show_message(str(item_list[item_index]))
 
         elif option == '0':
+            display.show_exit_message()
             exit()
 
         else:

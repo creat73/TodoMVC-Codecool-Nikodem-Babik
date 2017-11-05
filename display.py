@@ -11,3 +11,7 @@ def show_menu_options(menu_options):
 def show_item_list(items):
     print('Current item list: ')
     print(items)
+
+
+def show_exit_message():
+    print('Thanks for using the program!')
