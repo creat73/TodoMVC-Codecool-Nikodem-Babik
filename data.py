@@ -21,8 +21,8 @@ class ItemList:
     def __init__(self):
         self.item_list = []
 
-    def __getitem__(self, index):
-        return self.item_list[index]
+    def __getitem__(self, item_id):
+        return self.item_list[item_id]
 
     def __len__(self):
         return len(self.item_list)
@@ -30,8 +30,8 @@ class ItemList:
     def add_item(self, item):
         self.item_list.append(item)
 
-    def delete_item(self, index):
-        self.item_list.pop(index)
+    def delete_item(self, item_id):
+        self.item_list.pop(item_id)
 
     def __str__(self):
         string = ""
