@@ -4,6 +4,15 @@ class Item:
         self.description = description
         self.is_done = is_done
 
+    def modify_item(self, new_value, is_name=False):
+        if is_name:
+            self.name = new_value
+        else:
+            self.description = new_value
+
+    def mark_as_done(self):
+        self.is_done = True
+
 
 class ItemList:
     def __init__(self):

@@ -39,7 +39,9 @@ def main():
             pass
 
         elif option == '5':
-            pass
+            display.show_message('Type in index of item you want to mark as done: ')
+            item_index = input()
+            item_list[item_index].mark_as_done()
 
         elif option == '6':
             pass
